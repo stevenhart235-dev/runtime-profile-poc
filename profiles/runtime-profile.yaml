@@ -1,0 +1,20 @@
+apiVersion: runtimeprofile.io/v1
+kind: RuntimeProfile
+
+application:
+  name: payments-api
+  environment: dev
+  owner: platform
+
+availability:
+  tier: critical
+  multi_region: true
+  failover_required: true
+  health_check_path: /health
+  rto_minutes: 15
+  rpo_minutes: 5
+
+observability:
+  logs_required: true
+  metrics_required: true
+  tracing_required: false
